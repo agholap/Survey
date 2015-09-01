@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace Coldist.iOS.Survey
 {
+    //Reference - calling rest services
+    //http://developer.xamarin.com/recipes/android/web_services/consuming_services/call_a_rest_web_service/
     public static class SurveyManager1
     {
         static SurveyManager1()

@@ -7,6 +7,6 @@ namespace Coldist.iOS.Survey.Common
 {
     public class Constants
     {
-        public const string HelloWorld = "ddf";
+        public const string CrmProxyBaseURI = "http://coldistcrmproxy.azurewebsites.net/api/";
     }
 }

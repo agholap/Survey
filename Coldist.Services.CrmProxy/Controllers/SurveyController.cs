@@ -1,47 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Json;
+using System.Linq;
 using System.Net;
-using System.Text;
+using System.Net.Http;
+using System.Web.Http;
 
-namespace Coldist.iOS.Survey.Common.DAL
+namespace Coldist.Services.CrmProxy.Controllers
 {
-   public class DataManager
+    [RoutePrefix("api/survey")]
+    public class SurveyController : ApiController
     {
-        //Rest method calls would go here
-        static DataManager()
-        {
+        //// GET: api/Survey
+        //public IEnumerable<string> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
 
-        }
-
-        public static List<string> GetSurveys(string type)
-        {
-            //Url - Configure it to read from config/common place - 
-            string method = "Survey/GetAll/NotStarted";
-            // Create an HTTP web request using the URL:
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(Constants.CrmProxyBaseURI + method));
-            request.ContentType = "application/json";
-            request.Method = "GET";
-
-            // Send the request to the server and wait for the response:
-            using (WebResponse response = request.GetResponse())
-            {
-                // Get a stream representation of the HTTP web response:
-                using (Stream stream = response.GetResponseStream())
-                {
-                    // Use this stream to build a JSON document object:
-                    JsonValue jsonDoc = JsonObject.Load(stream);
-                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
-
-                    // Return the JSON document:
-                    return new List<string>(jsonDoc.ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-                    
-                }
-            }
-        }
-
-        public static List<string> GetSurveysDummy(string type)
+        // GET: api/Survey/5
+        //Adding route for attribute mapping - 
+        // refer https://damienbod.wordpress.com/2014/08/22/web-api-2-exploring-parameter-binding/
+        [Route("GetAll/{type}")]
+        [HttpGet]
+        public IEnumerable<string> GetAll(string type)
         {
             DateTime dayMin, dayMax;
             var days = new List<string>();
@@ -80,8 +60,21 @@ namespace Coldist.iOS.Survey.Common.DAL
                     break;
             }
             return days;
-
         }
 
+        // POST: api/Survey
+        public void Post([FromBody]string value)
+        {
+        }
+
+        // PUT: api/Survey/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE: api/Survey/5
+        public void Delete(int id)
+        {
+        }
     }
 }

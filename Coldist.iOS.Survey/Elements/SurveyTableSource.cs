@@ -1,4 +1,4 @@
-﻿using Coldist.iOS.Survey.Lib.BL.Managers;
+﻿using Coldist.iOS.Survey.Common.BL.Managers;
 using Foundation;
 using System;
 using System.Collections.Generic;

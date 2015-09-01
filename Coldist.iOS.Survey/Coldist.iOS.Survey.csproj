@@ -87,20 +87,24 @@
     <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Elements\SurveyCell.cs" />
     <Compile Include="Elements\SurveyClickedEventArgs.cs" />
-    <Compile Include="SurveyManager.cs" />
     <Compile Include="Elements\SurveyTableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Survey.cs" />
     <Compile Include="Elements\LocationClickedEventArgs.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Screens\SessionSplitView.cs" />
-    <Compile Include="Location.cs" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Coldist.iOS.Survey.Common\Coldist.iOS.Survey.Common.csproj">
+      <Project>{bc76f238-eef9-473b-b4c1-11566764b570}</Project>
+      <Name>Coldist.iOS.Survey.Common</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />

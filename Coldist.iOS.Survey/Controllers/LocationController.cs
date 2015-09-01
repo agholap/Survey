@@ -4,15 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UIKit;
-using Coldist.iOS.Survey.Lib.BL;
+using Coldist.iOS.Survey.Common.BL;
 
 namespace Coldist.iOS.Survey.Controllers
 {
     public partial class LocationController : DialogViewController
     {
-        List<Lib.BL.Survey> surverys = new List<Lib.BL.Survey>();
-        UITableView sessionDayTable;//= new UITableView();
-        //SessionTableSource tableSessionSource; BindingContext bc;
+        List<Common.BL.Survey> surverys = new List<Common.BL.Survey>();
+                //SessionTableSource tableSessionSource; BindingContext bc;
         Dictionary<string, string> quesAnswers = new Dictionary<string, string>();
         public LocationController(string surveyName, int surveyId,SessionSplitView sessionSplitView) 
             : base(UITableViewStyle.Plain, null, true)
@@ -42,7 +41,7 @@ namespace Coldist.iOS.Survey.Controllers
              }),
             new UIBarButtonItem(UIBarButtonSystemItem.Add, (sender, args) => {
                    Guid locId = Guid.NewGuid();
-                   var _survey = new Lib.BL.Survey
+                   var _survey = new Common.BL.Survey
                    {
                        Name = "Location " + surverys.Count,
                        Id = locId.ToString(),
@@ -83,7 +82,7 @@ namespace Coldist.iOS.Survey.Controllers
                })};
         }
         RootElement _rootElement; //Task task;
-          private void LoadSurveyScreen(Lib.BL.Survey survey)
+          private void LoadSurveyScreen(Common.BL.Survey survey)
         {
             List<Element> elms = new List<Element>();
 
