@@ -102,14 +102,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Coldist.iOS.Survey.Lib\Coldist.iOS.Survey.Lib.csproj">
-      <Project>{fc549000-b145-4956-bb80-42cfeacd21c7}</Project>
-      <Name>Coldist.iOS.Survey.Lib</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
