@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coldist.Services.CrmProxy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -62,6 +63,15 @@ namespace Coldist.Services.CrmProxy.Controllers
             return days;
         }
 
+        [Route("GetAllSurveys")]
+        public  IEnumerable<CrmSurvey> GetAllSurveys()
+        {
+            return new List<CrmSurvey>()
+            {
+                new CrmSurvey {SurveyId= 1,Name = "Ad-hoc Survey" },
+                new CrmSurvey {SurveyId= 2,Name = "Ad-hoc Survey" }
+            };
+        }
         // POST: api/Survey
         public void Post([FromBody]string value)
         {
