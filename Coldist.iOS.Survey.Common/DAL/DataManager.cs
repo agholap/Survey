@@ -12,7 +12,8 @@ namespace Coldist.iOS.Survey.Common.DAL
         //Rest method calls would go here
         static DataManager()
         {
-
+            //get survey
+            //Account Name, City, State
         }
 
         public static List<string> GetSurveys(string type)
@@ -30,9 +31,11 @@ namespace Coldist.iOS.Survey.Common.DAL
                 // Get a stream representation of the HTTP web response:
                 using (Stream stream = response.GetResponseStream())
                 {
+                    //code to call will go here
                     // Use this stream to build a JSON document object:
                     JsonValue jsonDoc = JsonObject.Load(stream);
-                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
+
+                    //Console.Out.WriteLine("Response: {0}", (CrmSurvey) jsonDoc);
 
                     // Return the JSON document:
                     return new List<string>(jsonDoc.ToString().Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
